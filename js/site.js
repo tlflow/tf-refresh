@@ -5,22 +5,26 @@ $(document).ready(function(){
   var contactButton = {
 
     activateButton: function(contact_button, contact_section, header_section) {
-        contact_button.on('click', function(){
+        contact_button.on('click', function(){          
 
           if (contact_section.height() === 0) {
+
             contact_section.animate({
               height: '300px'
             }, 1000);
             header_section.animate({
               marginTop: '300px'
             }, 1000);
+
           } else {
+            
             contact_section.animate({
-              height: '1px'
+              height: '0'
             }, 1000);
             header_section.animate({
               marginTop: '0'
             }, 1000);
+
           }
     
         });

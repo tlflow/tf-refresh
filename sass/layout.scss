@@ -42,6 +42,7 @@ body {
 }
 
 header {
+  position: fixed;
   background-color: $primary-stock-color1;
   @include box-shadow(rgba(#fff, .75) 0 1px 0, #ccc 0 1px 0);
 }
@@ -211,8 +212,7 @@ section {
   header {
     width: 100%;        
     padding: 60px 0 40px;
-    overflow: hidden;
-    position: relative;
+    overflow: hidden;    
 
     .logo {
       float: left;
@@ -262,7 +262,7 @@ section {
 
   #welcome {
     @include box-shadow(rgba(#000, .35) 0 1px 0, rgba(#fff, .65) 0 2px 0);
-    // background-color: #373D3F;
+    margin-top: 200px;
     background: url(/images/bg.grey.wool-penstripe.jpg) repeat 0 0 transparent;
     color: #f0f0f0;
 
@@ -388,14 +388,15 @@ section {
       .testimonial {
         min-height: 200px;
 
-        float: left;
-        width: 32%;
-        margin-left: 20px;
-
         &:first-child {
-          margin-left: 0;
+          @include zen-grid-item(2, 1);          
         }
-
+        &:nth-child(2) {
+          @include zen-grid-item(2, 4);
+        }
+        &:nth-child(3) {
+          @include zen-grid-item(2, 7);          
+        }
       } 
 
     }
@@ -638,7 +639,8 @@ section {
       float: left;
       background-color: green;
       width: 175px;      
-      height: 200px;
+      height: 175px;
+      @include border-radius(100px);
       margin-right: 20px;
     }
 
